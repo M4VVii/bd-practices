@@ -1,0 +1,18 @@
+# ===================== Sistema Operativo =====================
+# Archivos temporales de Linux y miniaturas de Windows
+*~
+.directory
+Thumbs.db
+Desktop.ini
+
+# ===================== Editores de Código =====================
+# Configuraciones locales de VS Code y Sublime Text
+.vscode/
+*.code-workspace
+*.sublime-workspace
+*.sublime-project
+
+# ===================== Docker y Base de Datos =====================
+# Ignorar credenciales sensibles y la carpeta del volumen de PostgreSQL
+.env
+pgdata/
