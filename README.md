@@ -38,5 +38,4 @@ Cada práctica vive de forma independiente en su propia rama para mantener un hi
 
 ---
 
-✨ *Repositorio mantenido por MAVV.*
-
+***Repositorio mantenido por MAVV.*** 🫰
