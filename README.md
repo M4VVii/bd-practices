@@ -27,6 +27,7 @@ Cada práctica vive de forma independiente en su propia rama para mantener un hi
 * [Imagen Oficial de PostgreSQL (Docker Hub)](https://hub.docker.com/_/postgres)
 * [Documentación de Docker Compose](https://docs.docker.com/compose/)
 * [Guía de GitHub Issues y Project Management](https://docs.github.com/es/issues)
+* [Cuando México tiembla: La historia contada por los datos. *AZCATL Revista de Divulgación en Ciencias, Ingeniería e Innovación*](https://doi.org/10.24275/AZC2026E1004)
 
 ## WHISPER...
 
