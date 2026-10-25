@@ -6,7 +6,7 @@ El proyecto está desarrollado utilizando un flujo de control de versiones media
 
 ## Índice de Prácticas
 
-Cada práctica vive de forma independiente en su propia rama para mantener un historial limpio y estructurado:  
+Cada práctica vive de forma independiente en su propia rama:
 
 | Práctica / Proyecto | Descripción | Rama |
 | :--- | :--- | :--- |
