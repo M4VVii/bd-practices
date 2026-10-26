@@ -51,12 +51,12 @@ Elaboración de tres propuestas de mejora registradas como issues en este reposi
 ## Datos Administrativos
 
 *   **Proyecto Asignado:** Sistema de visualización de datos sísmicos de México.
-*   **Dirección del Fork (Clonación):** [PEGA_AQUÍ_LA_URL_DE_TU_FORK_EN_GITHUB]
+*   **Dirección del Fork (Clonación):** [https://github.com/M4VVii/Seismic-Data-Visualization-System]
 *   **Confirmación (Commit) puesta en funcionamiento:** `[PEGA_EL_HASH_DEL_COMMIT]`
 *   **Issues de Propuestas de Mejora:**
-    *   Propuesta 1: [ENLACE_AL_ISSUE_1]
-    *   Propuesta 2: [ENLACE_AL_ISSUE_2]
-    *   Propuesta 3 (Machine Learning): [ENLACE_AL_ISSUE_3]
+    *   Propuesta 1: [https://github.com/M4VVii/bd-practices/issues/2]
+    *   Propuesta 2: [https://github.com/M4VVii/bd-practices/issues/3]
+    *   Propuesta 3 (Machine Learning): [https://github.com/M4VVii/bd-practices/issues/4]
 *   **Integridad Académica (Uso de IA):** Se utilizó un asistente de inteligencia artificial (Gemini) estrictamente como apoyo para la revisión ortotipográfica, validación del formato Markdown y estructuración de los documentos de texto, manteniendo la autoría original de todo el análisis técnico, modelado de datos e ingeniería inversa.
 
 **Repositorio Analizado:**
