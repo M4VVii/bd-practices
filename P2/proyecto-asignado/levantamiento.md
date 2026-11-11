@@ -1,9 +1,14 @@
+<div align="center">
+
 # Bitácora de Levantamiento, Puesta en Funcionamiento y Evidencia
+
+</div>
+
+<div align="justify">
 
 **Institución:** Instituto Politécnico Nacional (IPN) — Escuela Superior de Cómputo (ESCOM)  
 **Asignatura:** Bases de Datos  
-**Grupo:** 3BM2  
-**Alumno:** Valencia Villanueva Adrian  
+**Alumno:** Adrián Valencia Villanueva  
 **Proyecto Asignado:** Sistema de Visualización de Datos Sísmicos de México  
 **Repositorio Base (Upstream):** [gabrielhuav/Seismic-Data-Visualization-System](https://github.com/gabrielhuav/Seismic-Data-Visualization-System)  
 **Repositorio Personal (Fork):** [M4VVii/Seismic-Data-Visualization-System](https://github.com/M4VVii/Seismic-Data-Visualization-System)  
@@ -30,7 +35,7 @@ La aplicación opera bajo una arquitectura multicapa containerizada administrada
 ### Paso 1: Clonación del repositorio Fork y navegación
 ```bash
 git clone https://github.com/M4VVii/Seismic-Data-Visualization-System.git
-cd Seismic-Data-Visualization-System
+cd BD/Seismic-Data-Visualization-System
 ```
 
 ### Paso 2: Asignación de permisos al volumen local
@@ -51,11 +56,11 @@ docker ps
 
 ## 3. Registro de Incidencias Técnicas y Soluciones
 
-Durante el proceso de levantamiento local se diagnosticaron y resolvieron cuatro bloqueos técnicos principales:
+Durante el proceso de levantamiento local se diagnosticaron y resolvieron cuatro bloqueos técnicos:
 
 ### Incidencia 1: Error de puerto ocupado (`Bind for 0.0.0.0:5433 failed`)
 * **Síntoma:** Al ejecutar `docker compose up -d`, la terminal arrojó `Error response from daemon: driver failed programming external connectivity on endpoint ... Bind for 0.0.0.0:5433 failed: port is already allocated`.
-* **Causa Raíz:** Instancias previas de contenedores o servicios locales mantenían ocupado el puerto host 5433.
+* **Causa Raíz:** Instancias previas de contenedores locales mantenían ocupado el puerto host 5433.
 * **Solución Aplicada:** Detención de todos los contenedores activos antes de reestructurar la red:
   ```bash
   docker stop $(docker ps -q)
@@ -76,7 +81,7 @@ Durante el proceso de levantamiento local se diagnosticaron y resolvieron cuatro
 
 ### Incidencia 4: Tablas vacías (`0 rows`) y caída del contenedor por duplicidad de claves
 * **Síntoma:** Consultas a `dim_sismos` devolvían `(0 rows)`. Al intentar inyectar datos manualmente sobre un contenedor existente, las claves primarias duplicadas provocaron fallos (`duplicate key value violates unique constraint "dim_tiempo_pkey"`) y la detención del contenedor (`container is not running`).
-* **Solución Aplicada:** Reinicio con volumen limpio y recarga estructurada de archivos SQL:
+* **Solución Aplicada:** Reinicio con volumen limpio y recarga estructurada masiva de archivos SQL, logrando procesar el historial completo:
   ```bash
   # 1. Limpieza de volúmenes corruptos
   docker compose down -v
@@ -94,7 +99,14 @@ Durante el proceso de levantamiento local se diagnosticaron y resolvieron cuatro
 
 ## 4. Validación de la Base de Datos y Consultas SQL
 
-Tras completar la ingesta de los archivos SQL (`01-schema.sql` a `05-fact_impacto_sismos_imputed.sql`), se ejecutó la consulta oficial para extraer los 5 sismos de mayor magnitud registrados en PostgreSQL:
+Tras completar la ingesta de los archivos SQL, se verificó la carga de **319,592 sismos históricos** en el sistema:
+
+```sql
+SELECT COUNT(*) AS total_sismos_cargados FROM dim_sismos;
+```
+*(Resultado: 319592 rows)*
+
+Posteriormente, se ejecutó la consulta oficial para extraer los 5 sismos de mayor magnitud registrados en PostgreSQL con la base de datos completa:
 
 ```sql
 SELECT s.id_sismo, s.magnitud, s.referencia_de_localizacion 
@@ -107,18 +119,20 @@ LIMIT 5;
 ```text
  id_sismo | magnitud |          referencia_de_localizacion          
 ----------+----------+----------------------------------------------
+    91665 |      8.2 | 140 km al SUROESTE de PIJIJIAPAN, CHIS
        55 |      8.2 | 4 km al SURESTE de CASIMIRO CASTILLO, JAL
      2461 |      8.1 | 45 km al NOROESTE de LA MIRA, MICH
      9019 |        8 | 10 km al SURESTE de MANZANILLO, COL
        79 |      7.9 | 93 km al ESTE de CD HIDALGO, CHIS
-       56 |      7.8 | 14 km al SUROESTE de TUXPAN, JAL
 (5 rows)
 ```
 
-## 5. Catálogo de Evidencias Fotográficas
+## 5. Evidencias Fotográficas
 
-Las tres evidencias oficiales requeridas por la guía de la Práctica 2 fueron almacenadas en el directorio `P2/proyecto-asignado/evidencias/`:
+Las tres evidencias se encuentran almacenadas en el directorio `P2/proyecto-asignado/evidencias/`:
 
 * **`01-terminal-docker.webp`**: Captura de terminal que valida el arranque correcto de los dos contenedores mediante `docker ps`, confirmando los mapeos en puertos `80` (web) y `5433` (PostgreSQL).
-* **`02-aplicacion-local.webp`**: Captura de pantalla del navegador Brave cargando `http://localhost/vista.html`, mostrando el mapa dinámico con áreas de afectación en Guerrero y Oaxaca, contabilizando **3 sismos**, **11,804,981 personas potencialmente afectadas** y un sismo con impacto máximo de **magnitud 6.7**.
-* **`03-consulta-sql.webp`**: Captura de terminal ejecutando el comando `docker exec -it ... psql` mostrando la tabla formal de los 5 sismos más fuertes de la base de datos `datawarehouse`.
+* **`02-aplicacion-local.webp`**: Captura de pantalla del navegador Brave cargando `http://localhost/vista.html`, mostrando el mapa dinámico tras cargar la totalidad de la base de datos, reflejando correctamente el procesamiento de los puntos de afectación a nivel nacional.
+* **`03-consulta-sql.webp`**: Captura de terminal ejecutando las consultas `COUNT(*)` y `LIMIT 5`, mostrando la carga total de 319,592 registros y la tabla con los 5 sismos más fuertes encabezada por el evento de Pijijiapan.
+
+</div>
