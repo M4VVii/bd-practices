@@ -8,9 +8,8 @@
         <strong>INSTITUTO POLITÉCNICO NACIONAL</strong><br>
         <strong>ESCUELA SUPERIOR DE CÓMPUTO</strong><br><br>
         Ingeniería en Inteligencia Artificial<br>
-        Unidad de aprendizaje: Análisis y Diseño de Algoritmos<br>
-        Grupo: 3BM2 &nbsp;|&nbsp; Semestre: 2027-1<br>
-        Profesor: Dr. Benjamín Luna Benoso
+        Grupo: 3BV1 &nbsp;|&nbsp; Semestre: 2027-1<br>
+        Profesor: Hurtado Avilés Gabriel
       </td>
       <td align="center" valign="middle">
         <img src="img/escom.webp" alt="Logo ESCOM" width="140">
