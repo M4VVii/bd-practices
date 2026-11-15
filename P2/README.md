@@ -14,20 +14,20 @@ El directorio `P2/` está organizado conforme a la rúbrica institucional:
 ```text
 📦 P2
  ┣ 📂 articulos/
- ┃ ┗ 📜 resumenes.pdf                      # Resúmenes analíticos de 3 artículos sobre BD
+ ┃ ┗ 📜 resumenes.pdf                      # Resúmenes analíticos de 3 artículos sobre BD.
  ┣ 📂 exposicion/
- ┃ ┗ 📜 presentacion.pdf                   # Presentación para la defensa técnica de la práctica
+ ┃ ┗ 📜 presentacion.pdf                   # Presentación para la defensa técnica de la práctica.
  ┣ 📂 propuestas/
- ┃ ┗ 📜 propuestas-de-mejora.pdf           # Propuestas con integración de IA (Req. ESCOM)
+ ┃ ┗ 📜 propuestas-de-mejora.pdf           # Propuestas para una futura integración.
  ┣ 📂 proyecto-asignado/
  ┃ ┣ 🖼️ evidencias                         # Capturas del arranque, de la aplicación y de la consulta.
- ┃ ┣ 📜 correspondencia-con-el-esquema.pdf # Auditoría, ingeniería inversa y hallazgos
- ┃ ┣ 🖼️ eer.webp                           # Diagrama conceptual inferido del sistema de sismos
- ┃ ┗ 📜 levantamiento.md                   # Bitácora de clonación, ejecución y consultas SQL
+ ┃ ┣ 📜 correspondencia-con-el-esquema.pdf # Auditoría, ingeniería inversa y hallazgos.
+ ┃ ┣ 🖼️ eer.webp                           # Diagrama conceptual inferido del sistema de sismos.
+ ┃ ┗ 📜 levantamiento.md                   # Bitácora de clonación, ejecución y consultas SQL.
  ┣ 📂 proyecto-propio/
- ┃ ┣ 🖼️ eer-chen.webp                      # Diagrama EER final (Notación Chen)
- ┃ ┣ 🖼️ eer-crows-feet.webp                # Esquema relacional lógico (Crow's Feet)
- ┃ ┗ 📜 requisitos-ampliados.pdf           # Justificación de las nuevas reglas de negocio
+ ┃ ┣ 🖼️ eer-chen.webp                      # Diagrama EER final (Notación Chen).
+ ┃ ┣ 🖼️ eer-crows-feet.webp                # Esquema relacional lógico (Crow's Feet).
+ ┃ ┗ 📜 requisitos-ampliados.pdf           # Justificación de las nuevas reglas del modelo.
  ┗ 📜 README.md
 ```
 
